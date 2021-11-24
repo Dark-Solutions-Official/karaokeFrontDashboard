@@ -35,14 +35,14 @@ export class DashboardIndexComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // this.statsService.getStats().subscribe((data:any) => {
-    //   console.log(data);
-    //   this.user = data.user;
-    //   this.playedArtists = data.playedArtists;
-    //   this.playedTracks = data.playedTracks;
-    //   this.fails = data.fails;
-    //   this.asserts = data.asserts;
-    // });
+    this.statsService.getStats().subscribe((data:any) => {
+      console.log(data);
+      this.user = data.user;
+      this.playedArtists = data.playedArtists;
+      this.playedTracks = data.playedTracks;
+      this.fails = data.fails;
+      this.asserts = data.asserts;
+    });
     this.asserts.forEach(element => {
       this.mbarChartLabelsAsserts.push(element.word);
       this.barChartDataAsserts[0].data.push(element.times.toString());
@@ -63,10 +63,10 @@ export class DashboardIndexComponent implements OnInit {
     responsive: true
   };
   public chartClicked(e: any): void {
-    console.log(e);
+    //console.log(e);
   }
   public chartHovered(e: any): void {
-    console.log(e);
+    //console.log(e);
   }
   ////////////////////////////Fails Bar Chart Colors///////////////////////////////
   public barChartColorsFails: Array<any> = [

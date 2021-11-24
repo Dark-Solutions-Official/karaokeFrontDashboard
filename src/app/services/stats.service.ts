@@ -10,16 +10,13 @@ export class StatsService {
   //npm install chart.js --save
   //npm install ng2-charts --save
 
-  userEmail: string = '';
+  userEmail: string = 'sam.astua7@gmail.com';
 
   constructor(private http: HttpClient) { }
 
   getStats(){
-    
-    const httpParams = new HttpParams()
-    .set('email', this.userEmail)
 
-    return this.http.get(this.address + httpParams);
+    return this.http.get(this.address + this.userEmail);
   }
 
 }
