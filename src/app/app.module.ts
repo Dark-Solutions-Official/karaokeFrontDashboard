@@ -1,21 +1,22 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ChartsModule } from 'ng2-charts';
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { DashboardIndexComponent } from './components/dashboard-index/dashboard-index.component';
+import { EmptyRouteComponent } from './empty-route/empty-route.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardIndexComponent
+    EmptyRouteComponent
   ],
   imports: [
-    ChartsModule,
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
+    ChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
