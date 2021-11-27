@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class StatsService {
 
-  address = 'http://services.saymonastua:7002/stadistics/';
+  address = 'http://services.saymonastua.com:7002/stadistics/';
   //npm install chart.js --save
   //npm install ng2-charts --save
 
