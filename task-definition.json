@@ -1,0 +1,87 @@
+{
+    "ipcMode": null,
+    "executionRoleArn": null,
+    "containerDefinitions": [
+        {
+            "dnsSearchDomains": null,
+            "environmentFiles": null,
+            "logConfiguration": null,
+            "entryPoint": null,
+            "portMappings": [
+                {
+                    "hostPort": 4103,
+                    "protocol": "tcp",
+                    "containerPort": 4103
+                }
+            ],
+            "command": null,
+            "linuxParameters": null,
+            "cpu": 250,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": [],
+            "workingDirectory": null,
+            "secrets": null,
+            "dockerSecurityOptions": null,
+            "memory": 100,
+            "memoryReservation": 70,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "234469709037.dkr.ecr.us-west-2.amazonaws.com/karaoke-front-dashboard",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "karaoke-front-dashboard"
+        }
+    ],
+    "placementConstraints": [],
+    "memory": "100",
+    "taskRoleArn": null,
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:234469709037:task-definition/dashboard-front-td:1",
+    "family": "dashboard-front-td",
+    "requiresAttributes": [
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        }
+    ],
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "networkMode": null,
+    "runtimePlatform": null,
+    "cpu": "250",
+    "revision": 1,
+    "status": "ACTIVE",
+    "inferenceAccelerators": null,
+    "proxyConfiguration": null,
+    "volumes": []
+}

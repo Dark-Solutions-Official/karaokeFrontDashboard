@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StatsService } from 'src/app/services/stats.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'dashboard',
@@ -32,6 +33,7 @@ export class AppComponent {
     ];
   
     ngOnInit(): void {
+      
       this.statsService.getStats().subscribe((data:any) => {
         console.log(data);
         this.user = data.user;

@@ -7,6 +7,7 @@ import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
 
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { ChartsModule } from 'ng2-charts';
     ChartsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
