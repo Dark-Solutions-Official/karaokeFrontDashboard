@@ -26,71 +26,72 @@ export class AppComponent {
     { data: [], label: 'Asserts' },
   ];
 
-    //Fails Chart//
-    public mbarChartLabelsFails: string[] = [];
-    public barChartDataFails: any[] = [
-      { data: [], label: 'Fails' },
-    ];
-  
-    ngOnInit(): void {
-      this.barChartDataFails[0].data = [];
-      this.barChartDataAsserts[0].data = [];
+  //Fails Chart//
+  public mbarChartLabelsFails: string[] = [];
+  public barChartDataFails: any[] = [
+    { data: [], label: 'Fails' },
+  ];
 
-      this.statsService.getStats().subscribe((data:any) => {
-        console.log(data);
-        this.user = data.user;
-        this.playedArtists = data.playedArtists;
-        this.playedTracks = data.playedTracks;
-        this.fails = data.fails;
-        this.asserts = data.asserts;
-      });
+  ngOnInit(): void {
+    this.barChartDataFails[0].data = [];
+    this.barChartDataAsserts[0].data = [];
+
+    this.statsService.getStats().subscribe((data: any) => {
+      console.log(data);
+      this.user = data.user;
+      this.playedArtists = data.playedArtists;
+      this.playedTracks = data.playedTracks;
+      this.fails = data.fails;
+      this.asserts = data.asserts;
+
       this.asserts.forEach(element => {
         this.mbarChartLabelsAsserts.push(element.word);
         this.barChartDataAsserts[0].data.push(element.times.toString());
       });
-  
+
       this.fails.forEach(element => {
         this.mbarChartLabelsFails.push(element.word);
         this.barChartDataFails[0].data.push(element.times.toString());
       });
-  
-    }
-  
-    ////////////////////////////General Config Chart/////////////////////////
-    public barChartType = 'bar' as const;
-    public barChartLegend: boolean = true;
-    public barChartOptions: any = {
-      scaleShowVerticalLines: false,
-      responsive: true
-    };
-    public chartClicked(e: any): void {
-      //console.log(e);
-    }
-    public chartHovered(e: any): void {
-      //console.log(e);
-    }
-    ////////////////////////////Fails Bar Chart Colors///////////////////////////////
-    public barChartColorsFails: Array<any> = [
-      {
-        backgroundColor: 'rgba(255, 107, 87, 0.8)',
-        borderColor: 'rgba(105,159,177,1)',
-        pointBackgroundColor: 'rgba(105,159,177,1)',
-        pointBorderColor: '#fafafa',
-        pointHoverBackgroundColor: '#fafafa',
-        pointHoverBorderColor: 'rgba(105,159,177)'
-      },
-    ];
-  
-    ////////////////////////////Asserts Bar Chart Colors///////////////////////////////
-    public barChartColorsAsserts: Array<any> = [
-      {
-        backgroundColor: 'rgba(123, 249, 127, 0.8)',
-        borderColor: 'rgba(105,159,177,1)',
-        pointBackgroundColor: 'rgba(105,159,177,1)',
-        pointBorderColor: '#fafafa',
-        pointHoverBackgroundColor: '#fafafa',
-        pointHoverBorderColor: 'rgba(105,159,177)'
-      },
-    ];
-    
+
+    });
+  }
+
+  ////////////////////////////General Config Chart/////////////////////////
+  public barChartType = 'bar' as const;
+  public barChartLegend: boolean = true;
+  public barChartOptions: any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public chartClicked(e: any): void {
+    //console.log(e);
+  }
+  public chartHovered(e: any): void {
+    //console.log(e);
+  }
+  ////////////////////////////Fails Bar Chart Colors///////////////////////////////
+  public barChartColorsFails: Array<any> = [
+    {
+      backgroundColor: 'rgba(255, 107, 87, 0.8)',
+      borderColor: 'rgba(105,159,177,1)',
+      pointBackgroundColor: 'rgba(105,159,177,1)',
+      pointBorderColor: '#fafafa',
+      pointHoverBackgroundColor: '#fafafa',
+      pointHoverBorderColor: 'rgba(105,159,177)'
+    },
+  ];
+
+  ////////////////////////////Asserts Bar Chart Colors///////////////////////////////
+  public barChartColorsAsserts: Array<any> = [
+    {
+      backgroundColor: 'rgba(123, 249, 127, 0.8)',
+      borderColor: 'rgba(105,159,177,1)',
+      pointBackgroundColor: 'rgba(105,159,177,1)',
+      pointBorderColor: '#fafafa',
+      pointHoverBackgroundColor: '#fafafa',
+      pointHoverBorderColor: 'rgba(105,159,177)'
+    },
+  ];
+
 }
