@@ -17,8 +17,8 @@ export class AppComponent {
   //playedTracks = [{ "track": " ", "artist": "", "times": "" }];
   playedArtists = [{ "artist": "Bad Bunny", "times": 7 }, { "artist": "Anuel AA", "times": 1 }, { "artist": "Anuel AA", "times": 1 }, { "artist": "Anuel AA", "times": 1 }, { "artist": "Anuel AA", "times": 1 }];
   playedTracks = [{ "track": "Volvi", "artist": "Bad Bunny", "times": 7 }, { "track": "La ultima vez", "artist": "Anuel AA", "times": 1 }, { "track": "La ultima vez", "artist": "Anuel AA", "times": 1 }, { "track": "La ultima vez", "artist": "Anuel AA", "times": 1 }, { "track": "La ultima vez", "artist": "Anuel AA", "times": 1 }];
-  fails = [{ "word": "Yeah", "times": 10 }, { "word": "noche", "times": 6 }, { "word": "el", "times": 3 }, { "word": "baby", "times": 3 }, { "word": "yeaaaah", "times": 3 }];
-  asserts = [{ "word": "La", "times": 30 }, { "word": "el", "times": 9 }, { "word": "la", "times": 6 }, { "word": "hola", "times": 6 }, { "word": "Volvi", "times": 3 }];
+  fails = [{ "word": "", "times": "" }];
+  asserts = [{ "word": "", "times": "" }];
 
   //Asserts Chart//
   public mbarChartLabelsAsserts: string[] = [];
@@ -33,7 +33,9 @@ export class AppComponent {
     ];
   
     ngOnInit(): void {
-      
+      this.barChartDataFails[0].data = [];
+      this.barChartDataAsserts[0].data = [];
+
       this.statsService.getStats().subscribe((data:any) => {
         console.log(data);
         this.user = data.user;
